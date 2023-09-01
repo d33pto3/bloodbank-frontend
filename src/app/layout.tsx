@@ -19,11 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="flex-col justify-center items-center w-[80%]">
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

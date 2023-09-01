@@ -5,7 +5,6 @@ const HeaderTable = () => {
   return (
     <TableHead>
       <TableRow>
-        <TableCell>Name</TableCell>
         <TableCell align="right">Name</TableCell>
         <TableCell align="right">Blood Group</TableCell>
         <TableCell align="right">Area</TableCell>
