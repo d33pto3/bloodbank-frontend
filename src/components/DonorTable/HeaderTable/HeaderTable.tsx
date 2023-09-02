@@ -5,11 +5,11 @@ const HeaderTable = () => {
   return (
     <TableHead>
       <TableRow>
-        <TableCell align="right">Name</TableCell>
-        <TableCell align="right">Blood Group</TableCell>
-        <TableCell align="right">Area</TableCell>
-        <TableCell align="right">Last Donated</TableCell>
-        <TableCell align="right">Contacts</TableCell>
+        <TableCell align="center">Name</TableCell>
+        <TableCell align="center">Blood Group</TableCell>
+        <TableCell align="center">Area</TableCell>
+        <TableCell align="center">Last Donated</TableCell>
+        <TableCell align="center">Contacts</TableCell>
       </TableRow>
     </TableHead>
   );
