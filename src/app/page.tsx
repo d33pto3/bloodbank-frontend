@@ -20,9 +20,10 @@ interface User {
   id: number;
   name: string;
   blood_type: string;
-  last_donated: string;
+  last_donated: number;
   area: string;
-
+  district: string;
+  phoneNo: string;
   // ... other properties
 }
 
@@ -100,14 +101,22 @@ export default function Home() {
                     key={user.id}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
-                    <TableCell component="th" scope="row">
+                    <TableCell align="center" component="th" scope="row">
                       {user?.name}
                     </TableCell>
-                    <TableCell align="right">{user?.blood_type}</TableCell>
-                    <TableCell align="right">{user?.last_donated}</TableCell>
-                    <TableCell align="right">{user?.area}</TableCell>
-                    <TableCell align="right">90 days ago</TableCell>
-                    <TableCell align="right">01777777</TableCell>
+                    <TableCell align="center" className="text-red">
+                      {user?.blood_type}
+                    </TableCell>
+                    <TableCell align="center">
+                      {user?.district ?? "N/A"}
+                    </TableCell>
+                    <TableCell align="center">
+                      {user?.last_donated ?? 0} days ago
+                    </TableCell>
+                    <TableCell align="center">
+                      {user?.phoneNo ?? "N/A"}
+                    </TableCell>
+                    {/* <TableCell align="right">01777777</TableCell> */}
                   </TableRow>
                 ))}
               </TableBody>
