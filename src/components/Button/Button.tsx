@@ -1,8 +1,18 @@
 import React from "react";
 import { Button } from "@mui/material";
 
-const CustomButton = ({ name, classes }: any) => {
-  return <div className={`${classes}`}>{name}</div>;
+interface ICustomButton {
+  name: string;
+  classes?: string;
+  onClickFn?: React.MouseEventHandler<HTMLButtonElement> | any;
+}
+
+const CustomButton = ({ name, classes, onClickFn }: ICustomButton) => {
+  return (
+    <div className={`${classes}`} onClick={onClickFn}>
+      {name}
+    </div>
+  );
 };
 
 export default CustomButton;
