@@ -4,12 +4,20 @@ import React from "react";
 const HeaderTable = () => {
   return (
     <TableHead>
-      <TableRow>
-        <TableCell align="center">Name</TableCell>
-        <TableCell align="center">Blood Group</TableCell>
-        <TableCell align="center">Area</TableCell>
-        <TableCell align="center">Last Donated</TableCell>
-        <TableCell align="center">Contacts</TableCell>
+      <TableRow className="bg-black">
+        <TableCell className="text-white text-[16px] font-bold">Name</TableCell>
+        <TableCell align="center" className="text-white text-[16px] font-bold">
+          Blood Group
+        </TableCell>
+        <TableCell align="center" className="text-white text-[16px] font-bold">
+          Area
+        </TableCell>
+        <TableCell align="center" className="text-white text-[16px] font-bold">
+          Last Donated
+        </TableCell>
+        <TableCell align="center" className="text-white text-[16px] font-bold">
+          Contacts
+        </TableCell>
       </TableRow>
     </TableHead>
   );
