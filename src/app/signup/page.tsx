@@ -3,7 +3,7 @@ import React from "react";
 const SignUp = () => {
   return (
     <div className="flex justify-center bg">
-      <div className="border-2 border-[#000] rounded-[18px] my-[40px] px-[80px] bg-white">
+      <div className="border-[1px] border-[#000] rounded-[18px] my-[40px] px-[80px] bg-white shadow-md">
         <form className="text-left my-[55px] mt-[50px] text-[20px]">
           <div className="mb-[25px]">
             <label htmlFor="username" className="block">

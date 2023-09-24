@@ -1,12 +1,12 @@
 import useAuth from "@/utils/auth";
 import React from "react";
 
-const Dashboard = () => {
+const Dashboard = ({ id }: any) => {
   // useAuth();
 
   return (
     <div>
-      <h1>Welcome to user dashboard</h1>
+      <h1>Welcome to user dashboard of {id}</h1>
     </div>
   );
 };

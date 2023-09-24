@@ -2,7 +2,6 @@
 import Banner from "@/components/Banner/Banner";
 import HeaderTable from "@/components/DonorTable/HeaderTable/HeaderTable";
 import Label from "@/components/Label/Label";
-import Button from "@/components/Button/Button";
 import {
   Checkbox,
   Paper,
@@ -15,10 +14,14 @@ import {
 import { IUser } from "./interfaces/User";
 import { useEffect, useState } from "react";
 import { getUsersApi } from "@/api/usersApi";
+import TableHeader from "./table-header/TableHeader";
+import { useRouter } from "next/navigation";
 
 const bloodGroups = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 
 export default function Home() {
+  const router = useRouter();
+
   const [users, setUsers] = useState<IUser[]>([]);
 
   useEffect(() => {
@@ -87,34 +90,38 @@ export default function Home() {
           </div>
         </div>
         <div className="w-[60%]">
-          <div className="flex flex-row-reverse gap-[26px] mb-[17px]">
-            <Button
-              name="Plasma Donor"
-              classes="py-[7px] px-[60px] bg-white text-[32px] border border-[black] rounded-[12px]"
-            />
-            <Button
-              name="Donor"
-              classes="py-[7px] px-[60px] bg-primary text-[32px] border border-primary rounded-[12px] text-white font-semibold"
-            />
-          </div>
+          <TableHeader />
           <div className="rounded">
-            <TableContainer component={Paper}>
+            <TableContainer
+              component={Paper}
+              sx={{
+                marginBottom: 6,
+              }}
+            >
               <Table
                 sx={{
                   minWidth: 650,
                   paddingX: "4px",
-                  borderRadius: 18,
+                  borderRadius: "18px",
                 }}
                 aria-label="simple table"
               >
                 <HeaderTable />
-                <TableBody>
+                <TableBody
+                  sx={{
+                    borderRadius: "10px",
+                  }}
+                >
                   {users.map((user) => (
                     <TableRow
                       key={user.id}
                       sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                     >
-                      <TableCell component="th" scope="row">
+                      <TableCell
+                        component="th"
+                        scope="row"
+                        onClick={() => router.push(`userDashboard/${user?.id}`)}
+                      >
                         {user?.name}
                       </TableCell>
                       <TableCell align="center" className="text-red">

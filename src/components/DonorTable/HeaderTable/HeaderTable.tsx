@@ -5,7 +5,9 @@ const HeaderTable = () => {
   return (
     <TableHead>
       <TableRow className="bg-black">
-        <TableCell className="text-white text-[16px] font-bold">Name</TableCell>
+        <TableCell className="text-white text-[16px] font-bold ml-4">
+          Name
+        </TableCell>
         <TableCell align="center" className="text-white text-[16px] font-bold">
           Blood Group
         </TableCell>
